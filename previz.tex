@@ -1,0 +1,49 @@
+\documentclass[paper=a4,fontsize=11pt]{scrartcl}
+\usepackage{CJK} 
+\usepackage[colorlinks,linkcolor=blue,anchorcolor=blue,citecolor=blue,CJKbookmarks]{hyperref} 
+%\usepackage{color}
+\usepackage{tikz}
+%\usepackage[usenames,dvipsnames]{xcolor}
+
+\usepackage{sectsty}	% Custom sectioning (see below)
+
+\definecolor{lightblue}{RGB}{110,245,238}
+\definecolor{darkblue}{RGB}{43,69,181}
+
+
+\usepackage{kpfonts}
+\usepackage[explicit]{titlesec}
+\newcommand*\chapterlabel{}
+\titleformat{\section}
+  {\gdef\chapterlabel{}
+   \normalfont\sffamily\Huge\bfseries\scshape}
+  {\gdef\chapterlabel{\thechapter\ }}{0pt}
+  {\begin{tikzpicture}[remember picture,overlay]
+    \node[yshift=-3cm] at (current page.north west)
+      {\begin{tikzpicture}[remember picture, overlay]
+        \draw[fill=lightblue] (0,0) rectangle
+          (\paperwidth,3cm);
+        \node[anchor=east,xshift=.9\paperwidth,rectangle,
+              rounded corners=20pt,inner sep=11pt,
+              fill=darkblue]
+              {\color{white}\chapterlabel#1};
+       \end{tikzpicture}
+      };
+   \end{tikzpicture}
+  }
+\titlespacing*{\section}{0pt}{50pt}{-60pt}
+
+
+\begin{document} 
+\begin{CJK*}{UTF8}{gbsn}
+	\title{PreViz: 镜头创作的神兵利器（下）}
+	\author{ArTek技术团队} 
+	\maketitle 
+	\input{./tex/intro.tex}
+	\input{./tex/pre.tex}
+%	\input{./tex/pipe.tex}
+%	\input{./tex/app.tex}
+
+
+\end{CJK*} 
+\end{document}
