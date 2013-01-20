@@ -1,0 +1,27 @@
+\documentclass{artek}
+
+%\documentclass[paper=a4,fontsize=11pt]{scrartcl}
+
+\usepackage{fancyhdr}
+%\usepackage{setspace}
+
+
+
+
+\begin{document} 
+\begin{CJK*}{UTF8}{gbsn}
+	\pagestyle{fancy}
+	\fancyhead{}
+	\fancyfoot{} % Clear all footer fields 
+	\lhead{\includegraphics[width=0.15\textwidth]{./figs/headlogo}}
+	\rhead{二零一三年二月行业速递}
+	\lfoot{如需订阅请点击：\href{http://www.artek-vfx.com/?p=211}{这里}}
+	\rfoot{\thepage}
+	\input{./tex/title.tex}
+	\input{./tex/news.tex}
+	\input{./tex/previz.tex}
+	\input{./tex/statement.tex}
+
+\clearpage
+\end{CJK*} 
+\end{document}
